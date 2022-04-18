@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>
-   <title></title>
-   <link rel="stylesheet" type="text/css" href="css/phone.css">
-</head>
-<body>
-   <h1>Un super titre</h1>
-</body>
+<html lang="fr">
+   <head>
+      <meta charser="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <link rel="stylesheet" type="text/css" href="css/phone.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+
+      <title>Ohmyfood</title>
+   </head>
+
+   <body>
+      <header>
+         <a href="#">
+            <picture>
+               <source media="(max-device-width: 767px)"
+                     srcset="images/logo/ohmyfood@2x.png">
+               <source media="(min-width: 768px)"
+                     srcset="images/logo/ohmyfood.png">
+               <img src="images/logo/ohmyfood.png" alt="Logo de Ohmyfood">
+            </picture>
+         </a>
+         <div class ="header__location-details">
+            <i class="fas fa-map-marker-alt"></i>
+            <h2>Paris, Belleville</h2>
+         </div>
+         <div class="header__titles">
+            <h1>Réservez le menu qui vous convient</h1>
+            <p>Découvrez des restaurant d'exception, séléctionnés par nos soins.</p>
+         </div>
+      </header>
+      
+   </body>
+
 </html>
