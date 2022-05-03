@@ -1,0 +1,61 @@
+@import "libs/reset.scss";
+@import "libs/fonts.scss";
+@import "libs/mixins.scss";
+
+$fonts-sizes:
+    h1 40px,
+    h2 32px,
+    h3 28px,
+    h4 24px,
+    p 20px;
+
+body
+{
+    max-width: 767px;
+}
+
+@each $font in $fonts-sizes
+{
+    #{nth($font, 1)}
+    {
+        font-size: nth($font, 2);
+    }
+}
+
+header
+{
+    @include Flex(column, center, center);
+    .header__location--details
+    {
+        display: inherit;
+        font-size: 26px;
+    }
+    .header__titles
+    {
+        @include Flex(column, center, center);
+    }
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.nav__processes--list
+{
+    margin-left: 3%;
+    margin-right: 3%;
+    list-style: none;
+    li a
+    {
+        width: 80%;
+        display: flex;
+    }
+    .nav__processes--numbers
+    {
+        padding: 1px 6px;
+        border-radius: 12px;
+        background-color: violet;
+    }
+}
