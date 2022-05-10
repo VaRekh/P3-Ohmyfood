@@ -1,68 +1,72 @@
+@font-face {
+  font-family: 'Shrikhand';
+  src: url("../../fonts/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../../fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../../fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../../fonts/Roboto/Roboto-Black.ttf") format("truetype");
+  font-weight: 900;
+}
+
 * {
   margin: 0;
   padding: 0;
-  font: Arial, sans-serif;
-}
-
-body {
-  max-width: 767px;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 24px;
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 20px;
 }
 
 h4 {
-  font-size: 24px;
+  font-size: 16px;
 }
 
 p {
   font-size: 20px;
 }
 
-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-header .header__location--details {
-  display: inherit;
-  font-size: 26px;
-}
-
-header .header__titles {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+body {
+  max-width: 767px;
+  font-family: Roboto, sans-serif;
 }
 
 a {
@@ -70,22 +74,177 @@ a {
   color: black;
 }
 
-.nav__processes--list {
-  margin-left: 3%;
-  margin-right: 3%;
-  list-style: none;
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.nav__processes--list li a {
+.header a {
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  padding: 30px 0px 10px 0px;
+  width: 100%;
+  -webkit-box-shadow: 5px 5px 5px lightgray;
+          box-shadow: 5px 5px 5px lightgray;
+}
+
+.header__location--details {
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(211, 211, 211, 0.479);
+}
+
+.header__location--details i {
+  position: relative;
+  right: 95px;
+  top: 18px;
+  font-size: 20px;
+}
+
+.header__location--details h3 {
+  position: absolute;
+  top: 18px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.header__titles {
+  background-color: whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  text-align: center;
+  width: 100%;
+}
+
+.header__titles h1 {
   width: 80%;
+  margin-top: 40px;
+}
+
+.header__titles p {
+  width: 95%;
+  margin: 15px 0px 40px 0px;
+}
+
+.nav {
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.nav h2 {
+  margin: 30px 0px 40px 0px;
+}
+
+.nav__processes--list {
+  list-style: none;
+  margin-bottom: 60px;
+}
+
+.nav__processes--list li {
+  padding: 25px 0px;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  -webkit-box-shadow: 5px 5px 15px lightgray;
+          box-shadow: 5px 5px 15px lightgray;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+.nav__processes--list a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.nav__processes--list .nav__processes--numbers {
-  padding: 1px 6px;
-  border-radius: 12px;
-  background-color: violet;
+.nav__processes--list .fas {
+  font-size: 20px;
+  margin-top: 4px;
+  margin-left: -4px;
+}
+
+.nav__processes--list .fa-mobile-alt {
+  margin-left: -2px;
+  margin-right: 30px;
+}
+
+.nav__processes--list .fa-list {
+  margin-right: 26px;
+}
+
+.nav__processes--list .fa-store {
+  margin-right: 24px;
+}
+
+.nav__processes--list span {
+  margin-top: 3px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav__processes--numbers {
+  color: white;
+  font-size: 16px;
+  margin-right: 30px;
+  margin-left: -14px;
+  padding: 4px 9px;
+  border-radius: 24px;
+  background-color: #9356DC;
+}
+
+.nav__hover-effect:hover {
+  background-color: #9256dc23;
+}
+
+.nav__hover-effect:hover .fas {
+  color: #9356DC;
 }
 /*# sourceMappingURL=phone.css.map */

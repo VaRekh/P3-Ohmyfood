@@ -1,18 +1,19 @@
-@import "libs/reset.scss";
+
 @import "libs/fonts.scss";
+@import "libs/reset.scss";
 @import "libs/mixins.scss";
 
 $fonts-sizes:
-    h1 40px,
-    h2 32px,
-    h3 28px,
-    h4 24px,
+    h1 30px,
+    h2 24px,
+    h3 20px,
+    h4 16px,
     p 20px;
 
-body
-{
-    max-width: 767px;
-}
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+
 
 @each $font in $fonts-sizes
 {
@@ -22,18 +23,10 @@ body
     }
 }
 
-header
+body
 {
-    @include Flex(column, center, center);
-    .header__location--details
-    {
-        display: inherit;
-        font-size: 26px;
-    }
-    .header__titles
-    {
-        @include Flex(column, center, center);
-    }
+    max-width: 767px;
+    font-family: Roboto, sans-serif;
 }
 
 a
@@ -42,20 +35,126 @@ a
     color: black;
 }
 
-.nav__processes--list
+.header
 {
-    margin-left: 3%;
-    margin-right: 3%;
-    list-style: none;
-    li a
+    @include Flex(column, center, center);
+    a
     {
-        width: 80%;
-        display: flex;
+        z-index: 1;
+        @include Flex(row, inherit);
+        padding: 30px 0px 10px 0px;
+        width: 100%;
+        box-shadow: 5px 5px 5px lightgray;
     }
-    .nav__processes--numbers
+    &__location--details
     {
-        padding: 1px 6px;
-        border-radius: 12px;
-        background-color: violet;
+        z-index: 0;
+        @include Flex(row, inherit);
+        position: relative;
+        width: 100%;
+        height: 60px;
+        background-color: rgba(211, 211, 211, 0.479);
+        i
+        {
+            position: relative;
+            right: 95px; top: 18px;
+            font-size: 20px;
+        }
+        h3
+        {
+            position: absolute;
+            top: 18px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+    &__titles
+    {
+        background-color: whitesmoke;
+        @include Flex(column, inherit, inherit);
+        text-align: center;
+        width: 100%;
+        h1
+        {
+            width: 80%;
+            margin-top: 40px;
+        }
+        p
+        {
+            width: 95%;
+            margin: 15px 0px 40px 0px; 
+        }
+    }
+}
+
+.nav
+{
+    margin-left: 4%;
+    margin-right: 4%;
+    h2
+    {
+        margin: 30px 0px 40px 0px;
+    }
+    &__processes--list
+    {
+        list-style: none;
+        margin-bottom: 60px;
+        li
+        {
+            padding: 25px 0px;
+            background-color: whitesmoke;
+            border-radius: 25px;
+            box-shadow: 5px 5px 15px lightgray;
+            margin-left: 10px;
+            margin-bottom: 30px;
+        }
+        a
+        {
+            display: flex;
+        }
+        .fas
+        {
+            font-size: 20px;
+            margin-top: 4px;
+            margin-left: -4px;
+        }
+        .fa-mobile-alt
+        {
+            margin-left: -2px;
+            margin-right: 30px;
+        }
+        .fa-list
+        {
+            margin-right: 26px;
+        }
+        .fa-store
+        {
+            margin-right: 24px;
+        }
+        span
+        {
+            margin-top: 3px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+    &__processes--numbers
+    {
+        color: white;
+        font-size: 16px;
+        margin-right: 30px;
+        margin-left: -14px;
+        padding: 4px 9px;
+        border-radius: 24px;
+        background-color: $primary-color;
+    }
+}
+
+.nav__hover-effect:hover
+{
+    background-color: #9256dc23;
+    .fas
+    {
+        color: $primary-color
     }
 }
