@@ -1,116 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charser="utf-8" />
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" media="screen and (max-device-width: 767px)" href="css/phone.scss">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+        <link rel="stylesheet" media="screen and (max-device-width: 767px)" href="../assets/css/phone.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <title>Ohmyfood</title>
     </head>
 
     <body>
-        <header>
-            <div>
-                <a href="homepage.html"></a><i class="fas fa-arrow-left"></i></a>
-                <a href="homepage.html">
-                    <picture>
-                        <source media="(max-device-width: 767px)"
-                                srcset="images/logo/ohmyfood@2x.png">
-                        <source media="(min-width: 768px)"
-                                srcset="images/logo/ohmyfood.png">
-                        <img src="images/logo/ohmyfood.png" alt="Logo de Ohmyfood">
+        <header class="header">
+            <a href="homepage.html"></a><i class="header fas fa-arrow-left"></i></a>
+            <a class="header__logo" href="homepage.html">
+                <picture>
+                    <source media="(min-width: 768px)"
+                            srcset="../assets/images/logo/ohmyfood.png">
+                    <source media="(max-device-width: 767px)"
+                            srcset="../assets/images/logo/ohmyfood@2x.svg">
+                    <img src="images/logo/ohmyfood.png" alt="Logo de Ohmyfood">
                     </picture>
-                </a>
+            </a>
+            <div class="header__picture">
+                <img src="../assets/images/restaurants/a-la-francaise.jpg" alt="Photo de À la française">
             </div>
-            <img src="" alt="Photo de À la française">
         </header>
       
-        <main>
-            <h1>À la française</h1>
-            <i class="fas fa-heart"></i>
-            <section>
-                <h2>ENTRÉES</h2>
-                <article>
+        <main class="menu">
+            <div class="menu__restaurant">
+                <h1>À la française</h1>
+                <i class="fa-regular fa-heart"></i>
+            </div>
+            <section class="menu__list">
+                <h2><span class="underline">ENTR</span>ÉES</h2>
+                <article class="menu__list--card">
                     <a href="#">
-                        <h3>Tartare de poulpe acidulé</h3>
-                        <h4>Aux zestes d'orange</h4>
-                        <h4>25€</h4>
+                        <h3 class="meal meal-title">Tartare de poulpe acidulé</h3>
+                        <h4 class="meal meal-info">Aux zestes d'orange</h4>
+                        <h4 class="meal-price">25€</h4>
                     </a>
                 </article>
-                <article>
+                <article class="menu__list--card">
                     <a href="#">
-                        <h3>Velouté de légumes d'antan</h3>
-                        <h4>Carotte, panais, topinambour</h4>
-                        <h4>35€</h4>
+                        <h3 class="meal meal-title">Velouté de légumes d'antan</h3>
+                        <h4 class="meal meal-info">Carotte, panais, topinambour</h4>
+                        <h4 class="meal-price">35€</h4>
                     </a>
                 </article>
-                <article>
+                <article class="menu__list--card">
                     <a href="#">
-                        <h3>Soupe à l'oignon</h3>
-                        <h4>Revisitée</h4>
-                        <h4>20€</h4>
-                    </a>
-                </article>
-            </section>
-            <section>
-                <h2>PLATS</h2>
-                <article>
-                    <a href="#">
-                        <h3>Coquilles Saint-Jacques</h3>
-                        <h4>Accompagnées d'une purée de panais</h4>
-                        <h4>40€</h4>
-                    </a>
-                </article>
-                <article>
-                    <a href="#">
-                        <h3>Magret de canard</h3>
-                        <h4>Et parmentier de pommes de terre</h4>
-                        <h4>35€</h4>
-                    </a>
-                </article>
-                <article>
-                    <a href="#">
-                        <h3>Pigeonneau d’Ille-et-Vilaine</h3>
-                        <h4>Sur son lit de gnocchis aux légumes</h4>
-                        <h4>44€</h4>
+                        <h3 class="meal meal-title">Soupe à l'oignon</h3>
+                        <h4 class="meal meal-info">Revisitée</h4>
+                        <h4 class="meal-price">20€</h4>
                     </a>
                 </article>
             </section>
-            <section>
-                <h2>DESSERTS</h2>
-                <article>
+            <section class="menu__list">
+                <h2><span class="underline">PLAT</span>S</h2>
+                <article class="menu__list--card">
                     <a href="#">
-                        <h3>Pétales de violettes glacés</h3>
-                        <h4>Et purée de noisettes</h4>
-                        <h4>18€
+                        <h3 class="meal meal-title">Coquilles Saint-Jacques</h3>
+                        <h4 class="meal meal-info">Accompagnées d'une purée de panais</h4>
+                        <h4 class="meal-price">40€</h4>
+                    </a>
+                </article>
+                <article class="menu__list--card">
+                    <a href="#">
+                        <h3 class="meal meal-title">Magret de canard</h3>
+                        <h4 class="meal meal-info">Et parmentier de pommes de terre</h4>
+                        <h4 class="meal-price">35€</h4>
+                    </a>
+                </article>
+                <article class="menu__list--card">
+                    <a href="#">
+                        <h3 class="meal meal-title">Pigeonneau d’Ille-et-Vilaine</h3>
+                        <h4 class="meal meal-info">Sur son lit de gnocchis aux légumes</h4>
+                        <h4 class="meal-price">44€</h4>
+                    </a>
+                </article>
+            </section>
+            <section class="menu__list">
+                <h2><span class="underline">DESS</span>ERTS</h2>
+                <article class="menu__list--card">
+                    <a href="#">
+                        <h3 class="meal meal-title">Pétales de violettes glacés</h3>
+                        <h4 class="meal meal-info">Et purée de noisettes</h4>
+                        <h4 class="meal-price">18€
                         </h4>
                     </a>
                 </article>
-                <article>
+                <article class="menu__list--card">
                     <a href="#">
-                        <h3>Fondant au chocolat</h3>
-                        <h4>Revisité</h4>
-                        <h4>22€</h4>
+                        <h3 class="meal meal-title">Fondant au chocolat</h3>
+                        <h4 class="meal meal-info">Revisité</h4>
+                        <h4 class="meal-price">22€</h4>
                     </a>
                 </article>
-                <article>
+                <article class="menu__list--card">
                     <a href="#">
-                        <h3>Millefeuille croustillant</h3>
-                        <h4>Myrtilles et pâte d’amande</h4>
-                        <h4>23€</h4>
+                        <h3 class="meal meal-title">Millefeuille croustillant</h3>
+                        <h4 class="meal meal-info">Myrtilles et pâte d’amande</h4>
+                        <h4 class="meal-price">23€</h4>
                     </a>
                 </article>
             </section>
+
+            <div class="button--container menu__button">
+                <a href="#">
+                    <button class="button menu__button--order" type="button">Commander</button>
+                </a>
+            </div>
         </main>
 
-        <footer>
+        <footer class="footer">
             <h2>ohmyfood</h2>
-            <ul>
-                <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
-                <li><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul class="footer__list">
+                <li class="footer__list--text"><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+                <li class="footer__list--text"><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
+                <li class="footer__list--text"><a href="#">Mentions légales</a></li>
+                <li class="footer__list--text"><a href="#">Contact</a></li>
             </ul>
         </footer>
     </body>

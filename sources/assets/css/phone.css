@@ -67,6 +67,7 @@ p {
 body {
   max-width: 767px;
   font-family: Roboto, sans-serif;
+  position: relative;
 }
 
 a {
@@ -88,6 +89,16 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+.header.fa-arrow-left {
+  position: absolute;
+  top: 33px;
+  right: auto;
+  bottom: auto;
+  left: 25px;
+  font-size: 24px;
 }
 
 .header__logo {
@@ -107,8 +118,23 @@ a {
           align-items: initial;
   padding: 30px 0px 10px 0px;
   width: 100%;
+}
+
+.header__logo.top-logo__shadow {
   -webkit-box-shadow: 5px 5px 5px lightgray;
           box-shadow: 5px 5px 5px lightgray;
+}
+
+.header__picture {
+  z-index: 0;
+}
+
+.header__picture img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .header__location--details {
@@ -194,13 +220,19 @@ a {
   -webkit-box-align: inherit;
       -ms-flex-align: inherit;
           align-items: inherit;
-  width: 100%;
-  background-color: whitesmoke;
   padding-bottom: 60px;
+  background-color: whitesmoke;
 }
 
 .header__button--explore {
   padding: 20px 25px;
+}
+
+.button--container {
+  width: 100%;
+}
+
+.button--container .button {
   border-style: none;
   border-radius: 50px;
   -webkit-box-shadow: 5px 5px 10px lightgray;
@@ -211,7 +243,7 @@ a {
   font-weight: 700;
 }
 
-.header__button--explore:hover {
+.button--container .button:hover {
   -webkit-box-shadow: 10px 10px 15px lightgray, -5px -5px 10px lightgray;
           box-shadow: 10px 10px 15px lightgray, -5px -5px 10px lightgray;
   background: linear-gradient(175deg, #F088E0, #AF73E1);
@@ -332,12 +364,12 @@ a {
   left: auto;
 }
 
-.restaurants__cards--image {
+.restaurants__cards--picture {
   position: relative;
   width: 100%;
 }
 
-.restaurants__cards--image img {
+.restaurants__cards--picture img {
   width: 100%;
   height: 175px;
   -o-object-fit: cover;
@@ -347,7 +379,7 @@ a {
   border-radius: 15px 15px 0px 0px;
 }
 
-.restaurants__cards--image .restaurants__cards--latest {
+.restaurants__cards--picture .restaurants__cards--latest {
   z-index: 1;
   position: absolute;
   top: 12px;
@@ -359,6 +391,109 @@ a {
   padding: 6px 12px;
   font-size: 14px;
   font-weight: 700;
+}
+
+.menu {
+  background-color: white;
+  width: 100%;
+  position: relative;
+  top: -60px;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  border-radius: 40px 40px 0px 0px;
+}
+
+.menu__restaurant {
+  margin-left: 5%;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.menu__restaurant h1 {
+  padding-top: 30px;
+  font-family: Shrikhand, sans-serif;
+  font-weight: 100;
+}
+
+.menu__restaurant i {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  bottom: auto;
+  left: auto;
+  font-size: 26px;
+}
+
+.menu__list {
+  margin: 0px 5% 40px 5%;
+}
+
+.menu__list h2 {
+  margin-left: 8px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.menu__list .underline {
+  padding-bottom: 4px;
+  border-bottom: 3px solid #99E2D0;
+}
+
+.menu__list--card {
+  position: relative;
+  min-height: 75px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 2px 15px lightgray;
+          box-shadow: 5px 2px 15px lightgray;
+}
+
+.menu__list--card .meal {
+  padding-top: 6px;
+  margin-left: 10px;
+}
+
+.menu__list--card .meal-title {
+  margin-right: 20%;
+  font-size: 20px;
+  padding-top: 14px;
+}
+
+.menu__list--card .meal-info {
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+
+.menu__list--card .meal-price {
+  position: absolute;
+  top: auto;
+  right: 25px;
+  bottom: 12px;
+  left: auto;
+}
+
+.menu__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+
+.menu__button--order {
+  padding: 20px 60px;
 }
 
 .footer {

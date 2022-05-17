@@ -29,6 +29,7 @@ body
 {
     max-width: 767px;
     font-family: Roboto, sans-serif;
+    position: relative;
 }
 
 a
@@ -40,13 +41,32 @@ a
 .header
 {
     @include Flex(column, center, center);
+    position: relative;
+    &.fa-arrow-left
+    {
+        @include Positioning($position: absolute, $top: 33px, $left: 25px);
+        font-size: 24px;
+    }
     &__logo
     {
         z-index: 1;
         @include Flex(row, inherit);
         padding: 30px 0px 10px 0px;
         width: 100%;
-        box-shadow: 5px 5px 5px lightgray;
+        &.top-logo__shadow
+        {
+            box-shadow: 5px 5px 5px lightgray;
+        }
+    }
+    &__picture
+    {
+        z-index: 0;
+        img
+        {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
     }
     &__location--details
     {
@@ -89,25 +109,33 @@ a
     &__button
     {
         @include Flex(column, inherit, inherit);
-        width: 100%;
-        background-color: whitesmoke;
         padding-bottom: 60px;
+        background-color: whitesmoke;
         &--explore
         {
             padding: 20px 25px;
-            border-style: none;
-            border-radius: 50px;
-            box-shadow: 5px 5px 10px lightgray;
-            background: linear-gradient(175deg, $secondary-color, $primary-color);
-            color: white;
-            font-size: 16px;
-            font-weight: 700;
         }
-        &--explore:hover
-        {
-            box-shadow: 10px 10px 15px lightgray, -5px -5px 10px lightgray;
-            background: linear-gradient(175deg, $secondary-color__lighter, $primary-color__lighter);
-        }
+    }
+}
+
+
+.button--container
+{
+    width: 100%;
+    .button
+    {
+        border-style: none;
+        border-radius: 50px;
+        box-shadow: 5px 5px 10px lightgray;
+        background: linear-gradient(175deg, $secondary-color, $primary-color);
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .button:hover
+    {
+        box-shadow: 10px 10px 15px lightgray, -5px -5px 10px lightgray;
+        background: linear-gradient(175deg, $secondary-color__lighter, $primary-color__lighter);
     }
 }
 
@@ -219,7 +247,7 @@ a
             @include Positioning(absolute, 10px, 20px)
         }
     }
-    &__cards--image
+    &__cards--picture
     {
         position: relative;
         width: 100%;
@@ -240,6 +268,85 @@ a
             padding: 6px 12px;
             font-size: 14px;
             font-weight: 700;
+        }
+    }
+}
+
+.menu
+{
+    background-color: white;
+    width: 100%;
+    @include Positioning(relative, -60px);
+    border-radius: 40px 40px 0px 0px;
+    &__restaurant
+    {
+        margin-left: 5%;
+        margin-bottom: 25px;
+        position: relative;
+        h1
+        {
+            padding-top: 30px;
+            font-family: Shrikhand, sans-serif;
+            font-weight: 100;
+        }
+        i
+        {
+            @include Positioning(absolute, 35px, 40px);
+            font-size: 26px;
+        }
+    }
+    &__list
+    {
+        margin: 0px 5% 40px 5%;
+        h2
+        {
+            margin-left: 8px;
+            margin-bottom: 25px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .underline
+        {
+            padding-bottom: 4px;
+            border-bottom: 3px solid $tertiary-color;
+        }
+    }
+    &__list--card
+    {
+        position: relative;
+        min-height: 75px;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        box-shadow: 5px 2px 15px lightgray;
+        .meal
+        {
+            padding-top: 6px;
+            margin-left: 10px
+        }
+        .meal-title
+        {
+            margin-right: 20%;
+            font-size: 20px;
+            padding-top: 14px;
+        }
+        .meal-info
+        {
+            padding-bottom: 10px;
+            font-weight: 400;
+        }
+        .meal-price
+        {
+            @include Positioning(absolute, $right: 25px, $bottom: 12px);
+        }
+    }
+    &__button
+    {
+        @include Flex(column, center, center);
+        padding-bottom: 40px;
+        padding-top: 20px;
+        &--order
+        {
+            padding: 20px 60px;
         }
     }
 }

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
    <head>
-      <meta charser="utf-8" />
+      <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <link rel="stylesheet" media="screen and (max-device-width: 767px)" href="../assets/css/phone.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
       <title>Ohmyfood</title>
    </head>
 
    <body>
       <header class="header">
-         <a class="header__logo" href="#">
+         <a class="header__logo top-logo__shadow" href="#">
             <picture>
                <source media="(min-width: 768px)"
                      srcset="../assets/images/logo/ohmyfood.png">
@@ -28,9 +29,9 @@
             <h1>Réservez le menu qui vous convient</h1>
             <p>Découvrez des restaurant d'exception, séléctionnés par nos soins.</p>
          </div>
-         <div class="header__button">
+         <div class="button--container header__button">
             <a href="#">
-               <button class="header__button--explore" type="button">Explorer nos restaurants</button>
+               <button class="button header__button--explore" type="button">Explorer nos restaurants</button>
             </a>
          </div>
       </header>
@@ -49,58 +50,57 @@
             <h2>Restaurants</h2>
             <article class="restaurants__cards">
                <a href="menu_palette-du-gout.html">
-                  <div class="restaurants__cards--image">
+                  <div class="restaurants__cards--picture">
                      <img src="../assets/images/restaurants/palette-du-gout.jpg" alt="Photo du restaurant La palette du goût">
                      <div class="restaurants__cards--latest">Nouveau</div>
                   </div>
                   <div class="restaurants__cards--infos">
                      <h3>La palette du goût</h3>
                      <h4>Ménilmontant</h4>
-                     <i class="fas fa-heart"></i>
+                     <i class="fa-regular fa-heart"></i>
                   </div>
                </a>
             </article>
             <article class="restaurants__cards">
                <a href="menu_la-note-enchantee.html">
-                  <div class="restaurants__cards--image">
+                  <div class="restaurants__cards--picture">
                      <img src="../assets/images/restaurants/note-enchantee.jpg" alt="Photo du restaurant La note enchantée">
                      <div class="restaurants__cards--latest">Nouveau</div>
                   </div>
                   <div class="restaurants__cards--infos">
                      <h3>La note enchantée</h3>
                      <h4>Charonne</h4>
-                     <i class="fas fa-heart"></i>
+                     <i class="fa-regular fa-heart"></i>
                   </div>
                </a>
             </article>
             <article class="restaurants__cards">
                <a href="menu_a-la-francaise.html">
-                  <div class="restaurants__cards--image">
+                  <div class="restaurants__cards--picture">
                      <img src="../assets/images/restaurants/a-la-francaise.jpg" alt="Photo du restaurant À la française">
                   </div>
                   <div class="restaurants__cards--infos">
                      <h3>À la française</h3>
                      <h4>Cité Rouge</h4>
-                     <i class="fas fa-heart"></i>
+                     <i class="fa-regular fa-heart"></i>
                   </div>
                </a>
             </article>
             <article class="restaurants__cards">
                <a href="menu_le-delice-des-sens.html">
-                  <div class="restaurants__cards--image">
+                  <div class="restaurants__cards--picture">
                      <img src="../assets/images/restaurants/delice-des-sens.jpg" alt="Photo du restaurant Le délice des sens">
                   </div>
                   <div class="restaurants__cards--infos">
                      <h3>Le délice des sens</h3>
                      <h4>Folie-Méricourt</h4>
-                     <i class="fas fa-heart"></i>
+                     <i class="fa-regular fa-heart"></i>
                   </div>
                </a>
             </article>
          </section>
       </main>
 
-		<!--<object type="text/html" data="layouts/footer.html"></object>-->
       <footer class="footer">
          <h2>ohmyfood</h2>
          <ul class="footer__list">
