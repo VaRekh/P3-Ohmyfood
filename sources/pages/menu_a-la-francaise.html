@@ -26,29 +26,39 @@
                 <img src="../assets/images/restaurants/a-la-francaise.jpg" alt="Photo de À la française">
             </div>
         </header>
-      
+
         <main class="menu">
             <div class="menu__restaurant">
                 <h1>À la française</h1>
-                <i class="fa-regular fa-heart"></i>
+                <form class="menu__restaurant--like" methode="post" action ="#">
+                    <input class="input__heart" id="input__liked" type="checkbox">
+                    <label class="btn" for="input__liked">
+                        <div class="heart-empty">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div class="heart-full">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </label>
+                </form>
             </div>
             <section class="menu__list">
                 <h2><span class="underline">ENTR</span>ÉES</h2>
-                <article class="menu__list--card">
+                <article class="menu__list--card fade-in__1">
                     <a href="#">
                         <h3 class="meal meal-title">Tartare de poulpe acidulé</h3>
                         <h4 class="meal meal-info">Aux zestes d'orange</h4>
                         <h4 class="meal-price">25€</h4>
                     </a>
                 </article>
-                <article class="menu__list--card">
+                <article class="menu__list--card fade-in__2">
                     <a href="#">
                         <h3 class="meal meal-title">Velouté de légumes d'antan</h3>
                         <h4 class="meal meal-info">Carotte, panais, topinambour</h4>
                         <h4 class="meal-price">35€</h4>
                     </a>
                 </article>
-                <article class="menu__list--card">
+                <article class="menu__list--card fade-in__3">
                     <a href="#">
                         <h3 class="meal meal-title">Soupe à l'oignon</h3>
                         <h4 class="meal meal-info">Revisitée</h4>
@@ -58,21 +68,21 @@
             </section>
             <section class="menu__list">
                 <h2><span class="underline">PLAT</span>S</h2>
-                <article class="menu__list--card">
+                <article class="menu__list--card fade-in__4">
                     <a href="#">
                         <h3 class="meal meal-title">Coquilles Saint-Jacques</h3>
                         <h4 class="meal meal-info">Accompagnées d'une purée de panais</h4>
                         <h4 class="meal-price">40€</h4>
                     </a>
                 </article>
-                <article class="menu__list--card">
+                <article class="menu__list--card fade-in__5">
                     <a href="#">
                         <h3 class="meal meal-title">Magret de canard</h3>
                         <h4 class="meal meal-info">Et parmentier de pommes de terre</h4>
                         <h4 class="meal-price">35€</h4>
                     </a>
                 </article>
-                <article class="menu__list--card">
+                <article class="menu__list--card fade-in__6">
                     <a href="#">
                         <h3 class="meal meal-title">Pigeonneau d’Ille-et-Vilaine</h3>
                         <h4 class="meal meal-info">Sur son lit de gnocchis aux légumes</h4>
@@ -82,7 +92,7 @@
             </section>
             <section class="menu__list">
                 <h2><span class="underline">DESS</span>ERTS</h2>
-                <article class="menu__list--card">
+                <article class="menu__list--card fade-in__7">
                     <a href="#">
                         <h3 class="meal meal-title">Pétales de violettes glacés</h3>
                         <h4 class="meal meal-info">Et purée de noisettes</h4>
@@ -90,14 +100,14 @@
                         </h4>
                     </a>
                 </article>
-                <article class="menu__list--card">
+                <article class="menu__list--card fade-in__8">
                     <a href="#">
                         <h3 class="meal meal-title">Fondant au chocolat</h3>
                         <h4 class="meal meal-info">Revisité</h4>
                         <h4 class="meal-price">22€</h4>
                     </a>
                 </article>
-                <article class="menu__list--card">
+                <article class="menu__list--card fade-in__9">
                     <a href="#">
                         <h3 class="meal meal-title">Millefeuille croustillant</h3>
                         <h4 class="meal meal-info">Myrtilles et pâte d’amande</h4>

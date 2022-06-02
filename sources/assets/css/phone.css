@@ -75,6 +75,278 @@ a {
   color: black;
 }
 
+.button--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.button--container .button {
+  border-style: none;
+  border-radius: 50px;
+  -webkit-box-shadow: 5px 5px 10px lightgray;
+          box-shadow: 5px 5px 10px lightgray;
+  background: linear-gradient(175deg, #FF79DA, #9356DC);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.button--container .button:hover {
+  -webkit-box-shadow: 10px 10px 15px lightgray, -5px -5px 10px lightgray;
+          box-shadow: 10px 10px 15px lightgray, -5px -5px 10px lightgray;
+  background: linear-gradient(175deg, #F088E0, #AF73E1);
+}
+
+.loader {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  border: 16px solid lightgray;
+  border-left: 16px solid #FF79DA;
+  border-top: 16px solid #9356DC;
+  border-right: 16px solid #99E2D0;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  opacity: 0;
+  -webkit-animation: loading-spinner 2s linear;
+          animation: loading-spinner 2s linear;
+}
+
+.loader ~ * {
+  -webkit-animation: fade-in 0.4s forwards linear 2s;
+          animation: fade-in 0.4s forwards linear 2s;
+  opacity: 0;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes loading-spinner {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.1);
+            transform: rotate(0deg) scale(0.1);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: rotate(160deg) scale(1);
+            transform: rotate(160deg) scale(1);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: rotate(440deg) scale(1);
+            transform: rotate(440deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(600deg) scale(0.1);
+            transform: rotate(600deg) scale(0.1);
+  }
+}
+
+@keyframes loading-spinner {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.1);
+            transform: rotate(0deg) scale(0.1);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: rotate(160deg) scale(1);
+            transform: rotate(160deg) scale(1);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: rotate(440deg) scale(1);
+            transform: rotate(440deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(600deg) scale(0.1);
+            transform: rotate(600deg) scale(0.1);
+  }
+}
+
+.fade-in__1 {
+  -webkit-animation: slide-up 1s backwards linear 0.15s;
+          animation: slide-up 1s backwards linear 0.15s;
+}
+
+.fade-in__2 {
+  -webkit-animation: slide-up 1s backwards linear 0.3s;
+          animation: slide-up 1s backwards linear 0.3s;
+}
+
+.fade-in__3 {
+  -webkit-animation: slide-up 1s backwards linear 0.45s;
+          animation: slide-up 1s backwards linear 0.45s;
+}
+
+.fade-in__4 {
+  -webkit-animation: slide-up 1s backwards linear 0.6s;
+          animation: slide-up 1s backwards linear 0.6s;
+}
+
+.fade-in__5 {
+  -webkit-animation: slide-up 1s backwards linear 0.75s;
+          animation: slide-up 1s backwards linear 0.75s;
+}
+
+.fade-in__6 {
+  -webkit-animation: slide-up 1s backwards linear 0.9s;
+          animation: slide-up 1s backwards linear 0.9s;
+}
+
+.fade-in__7 {
+  -webkit-animation: slide-up 1s backwards linear 1.05s;
+          animation: slide-up 1s backwards linear 1.05s;
+}
+
+.fade-in__8 {
+  -webkit-animation: slide-up 1s backwards linear 1.2s;
+          animation: slide-up 1s backwards linear 1.2s;
+}
+
+.fade-in__9 {
+  -webkit-animation: slide-up 1s backwards linear 1.35s;
+          animation: slide-up 1s backwards linear 1.35s;
+}
+
+.fade-in__10 {
+  -webkit-animation: slide-up 1s backwards linear 1.5s;
+          animation: slide-up 1s backwards linear 1.5s;
+}
+
+@-webkit-keyframes slide-up {
+  0% {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  75% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  75% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.input__heart {
+  display: none;
+}
+
+.input__heart:checked + .btn .heart-empty {
+  display: none;
+}
+
+.input__heart:checked + .btn .heart-full {
+  display: block;
+  -webkit-animation: HeartFullAnimation 0.6s linear;
+          animation: HeartFullAnimation 0.6s linear;
+}
+
+.heart-full {
+  display: none;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(175deg, #F088E0, #AF73E1);
+}
+
+.heart-empty {
+  -webkit-animation: HeartEmptyAnimation 0.6s linear;
+          animation: HeartEmptyAnimation 0.6s linear;
+}
+
+@-webkit-keyframes HeartFullAnimation {
+  0% {
+    color: white;
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+@keyframes HeartFullAnimation {
+  0% {
+    color: white;
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+@-webkit-keyframes HeartEmptyAnimation {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@keyframes HeartEmptyAnimation {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: black;
+  }
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,46 +479,12 @@ a {
 }
 
 .header__button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: inherit;
-      -ms-flex-pack: inherit;
-          justify-content: inherit;
-  -webkit-box-align: inherit;
-      -ms-flex-align: inherit;
-          align-items: inherit;
   padding-bottom: 60px;
   background-color: whitesmoke;
 }
 
 .header__button--explore {
   padding: 20px 25px;
-}
-
-.button--container {
-  width: 100%;
-}
-
-.button--container .button {
-  border-style: none;
-  border-radius: 50px;
-  -webkit-box-shadow: 5px 5px 10px lightgray;
-          box-shadow: 5px 5px 10px lightgray;
-  background: linear-gradient(175deg, #FF79DA, #9356DC);
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.button--container .button:hover {
-  -webkit-box-shadow: 10px 10px 15px lightgray, -5px -5px 10px lightgray;
-          box-shadow: 10px 10px 15px lightgray, -5px -5px 10px lightgray;
-  background: linear-gradient(175deg, #F088E0, #AF73E1);
 }
 
 .nav {
@@ -356,12 +594,17 @@ a {
   font-weight: 400;
 }
 
-.restaurants__cards--infos i {
+.restaurants__cards--infos .heart-icon {
   position: absolute;
   top: 10px;
-  right: 20px;
+  right: 25px;
   bottom: auto;
   left: auto;
+  font-size: 22px;
+}
+
+.restaurants__cards--infos input {
+  display: none;
 }
 
 .restaurants__cards--picture {
@@ -374,13 +617,12 @@ a {
   height: 175px;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: 10% 60%;
+     object-position: 10% 60%;
   border-radius: 15px 15px 0px 0px;
 }
 
 .restaurants__cards--picture .restaurants__cards--latest {
-  z-index: 1;
   position: absolute;
   top: 12px;
   right: 12px;
@@ -389,6 +631,7 @@ a {
   background-color: #99E2D0;
   color: #0c8e6e;
   padding: 6px 12px;
+  border-radius: 3px;
   font-size: 14px;
   font-weight: 700;
 }
@@ -416,7 +659,7 @@ a {
   font-weight: 100;
 }
 
-.menu__restaurant i {
+.menu__restaurant--like {
   position: absolute;
   top: 35px;
   right: 40px;
@@ -475,19 +718,6 @@ a {
 }
 
 .menu__button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding-bottom: 40px;
   padding-top: 20px;
 }

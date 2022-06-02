@@ -14,3 +14,172 @@
     bottom: $bottom;
     left: $left;
 }
+
+@mixin ButtonDefaultParameters
+{
+    .button--container
+    {
+        @include Flex(column, center, center);
+        width: 100%;
+        .button
+        {
+            border-style: none;
+            border-radius: 50px;
+            box-shadow: 5px 5px 10px lightgray;
+            background: linear-gradient(175deg, $secondary-color, $primary-color);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .button:hover
+        {
+            box-shadow: 10px 10px 15px lightgray, -5px -5px 10px lightgray;
+            background: linear-gradient(175deg, $secondary-color__lighter, $primary-color__lighter);
+        }
+    }
+}
+
+@mixin LoaderSpinningAnimation
+{
+    .loader
+    {
+        @include Positioning(absolute, 100px, 0, $left:0);
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 2;
+        border: 16px solid lightgray;
+        border-left: 16px solid $secondary-color;
+        border-top: 16px solid $primary-color;
+        border-right: 16px solid $tertiary-color;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        opacity: 0;
+        animation: loading-spinner 2s linear;
+        ~ *
+        {
+            animation: fade-in 0.4s forwards linear 2s;
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade-in
+    {
+        from
+        {
+            opacity: 0;
+        }
+        to
+        {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes loading-spinner
+    {
+        0%
+        { 
+            opacity: 0;
+            transform: rotate(0deg) scale(0.1);
+        }
+        20%
+        {
+            opacity: 1;
+            transform: rotate(160deg) scale(1);
+        }
+        80%
+        {
+            opacity: 1;
+            transform: rotate(440deg) scale(1);
+        }
+        100%
+        {
+            opacity: 0;
+            transform: rotate(600deg) scale(0.1);
+        }
+    }
+}
+
+@mixin FadeInMealsAnimation
+{
+    @for $i from 1 through 10
+    {
+        .fade-in__#{$i}
+        {
+            animation: slide-up 1s backwards linear $i * 0.15s;
+        }
+    }
+
+    @keyframes slide-up
+    {
+        0%
+        {
+            transform: translateY(40px);
+            opacity: 0;
+        }
+        50%
+        {
+            transform: translateY(10px);
+        }
+        75%
+        {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+}
+
+@mixin HeartsAnimation
+{
+    .input__heart
+    {
+        display: none;
+        &:checked + .btn .heart-empty
+        {
+            display: none;
+        }
+        &:checked + .btn .heart-full
+        {
+            display: block;
+            animation: HeartFullAnimation 0.6s linear;
+        }
+    }
+    
+    .heart-full
+    {
+        display: none;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(175deg, $secondary-color__lighter, $primary-color__lighter);
+    }
+    
+    .heart-empty
+    {
+        animation: HeartEmptyAnimation 0.6s linear;
+    }
+    
+    @keyframes HeartFullAnimation
+    {
+        0%
+        {
+            color: white;
+        }
+        100%
+        {
+            color: transparent;
+        }
+    }
+    
+    @keyframes HeartEmptyAnimation
+    {
+        0%
+        {
+            color: transparent;
+        }
+        100%
+        {
+            color: black;
+        }
+    }
+}

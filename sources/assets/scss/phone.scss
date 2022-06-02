@@ -9,13 +9,13 @@ $fonts-sizes:
     h4 16px,
     p 20px;
 
-$primary-color: #9356DC;
-$primary-color__lighter: #AF73E1;
-$secondary-color: #FF79DA;
-$secondary-color__lighter: #F088E0;
-$tertiary-color: #99E2D0;
-$tertiary-color__darker: #0c8e6e;
-$dark-grey: #353535;
+$primary-color              : #9356DC;
+$primary-color__lighter     : #AF73E1;
+$secondary-color            : #FF79DA;
+$secondary-color__lighter   : #F088E0;
+$tertiary-color             : #99E2D0;
+$tertiary-color__darker     : #0c8e6e;
+$dark-grey                  : #353535;
 
 @each $font in $fonts-sizes
 {
@@ -38,13 +38,18 @@ a
     color: black;
 }
 
+@include ButtonDefaultParameters;
+@include LoaderSpinningAnimation;
+@include FadeInMealsAnimation;
+@include HeartsAnimation;
+
 .header
 {
     @include Flex(column, center, center);
     position: relative;
     &.fa-arrow-left
     {
-        @include Positioning($position: absolute, $top: 33px, $left: 25px);
+        @include Positioning(absolute, 33px, $left: 25px);
         font-size: 24px;
     }
     &__logo
@@ -83,7 +88,6 @@ a
         }
         h4
         {
-            
             @include Positioning(absolute, 18px);
             font-size: 20px;
             font-weight: 500;
@@ -108,34 +112,12 @@ a
     }
     &__button
     {
-        @include Flex(column, inherit, inherit);
         padding-bottom: 60px;
         background-color: whitesmoke;
         &--explore
         {
             padding: 20px 25px;
         }
-    }
-}
-
-
-.button--container
-{
-    width: 100%;
-    .button
-    {
-        border-style: none;
-        border-radius: 50px;
-        box-shadow: 5px 5px 10px lightgray;
-        background: linear-gradient(175deg, $secondary-color, $primary-color);
-        color: white;
-        font-size: 16px;
-        font-weight: 700;
-    }
-    .button:hover
-    {
-        box-shadow: 10px 10px 15px lightgray, -5px -5px 10px lightgray;
-        background: linear-gradient(175deg, $secondary-color__lighter, $primary-color__lighter);
     }
 }
 
@@ -242,9 +224,14 @@ a
             margin-left: 10px;
             font-weight: 400;
         }
-        i
+        .heart-icon
         {
-            @include Positioning(absolute, 10px, 20px)
+            @include Positioning(absolute, 10px, 25px);
+            font-size: 22px;
+        }
+        input
+        {
+            display: none;
         }
     }
     &__cards--picture
@@ -256,16 +243,16 @@ a
             width: 100%;
             height: 175px;
             object-fit: cover;
-            object-position: center;
+            object-position: 10% 60%;
             border-radius: 15px 15px 0px 0px;
         }
         .restaurants__cards--latest
         {
-            z-index: 1;
             @include Positioning(absolute, 12px, 12px);
             background-color: $tertiary-color;
             color: $tertiary-color__darker;
             padding: 6px 12px;
+            border-radius: 3px;
             font-size: 14px;
             font-weight: 700;
         }
@@ -289,7 +276,7 @@ a
             font-family: Shrikhand, sans-serif;
             font-weight: 100;
         }
-        i
+        &--like
         {
             @include Positioning(absolute, 35px, 40px);
             font-size: 26px;
@@ -341,7 +328,6 @@ a
     }
     &__button
     {
-        @include Flex(column, center, center);
         padding-bottom: 40px;
         padding-top: 20px;
         &--order
