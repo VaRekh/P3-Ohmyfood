@@ -1,23 +1,11 @@
 @import "libs/fonts.scss";
 @import "libs/reset.scss";
 @import "libs/mixins.scss";
+@import "libs/vars.scss";
 
-$fonts-sizes:
-    h1 30px,
-    h2 24px,
-    h3 18px,
-    h4 16px,
-    p 20px;
+$between-tablet-phone-resolution: "screen (min-width: 425px) and (max-width: 767px)";
 
-$primary-color              : #9356DC;
-$primary-color__lighter     : #AF73E1;
-$secondary-color            : #FF79DA;
-$secondary-color__lighter   : #F088E0;
-$tertiary-color             : #99E2D0;
-$tertiary-color__darker     : #0c8e6e;
-$dark-grey                  : #353535;
-
-@each $font in $fonts-sizes
+@each $font in $fonts-sizes--others
 {
     #{nth($font, 1)}
     {
@@ -28,95 +16,43 @@ $dark-grey                  : #353535;
 body
 {
     max-width: 767px;
-    font-family: Roboto, sans-serif;
-    position: relative;
 }
 
-a
+.loader
 {
-    text-decoration: none;
-    color: black;
+    @include Positioning(absolute, 100px, 0, $left:0);
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    border: 16px solid lightgray;
+    border-left: 16px solid $secondary-color;
+    border-top: 16px solid $primary-color;
+    border-right: 16px solid $tertiary-color;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+    animation: loading-spinner 2s linear;
+    ~ *
+    {
+        animation: fade-in 0.4s forwards linear 2s;
+        opacity: 0;
+    }
 }
-
-@include ButtonDefaultParameters;
-@include LoaderSpinningAnimation;
-@include FadeInMealsAnimation;
-@include HeartsAnimation;
 
 .header
 {
-    @include Flex(column, center, center);
-    position: relative;
     &.fa-arrow-left
     {
         @include Positioning(absolute, 33px, $left: 25px);
         font-size: 24px;
     }
-    &__logo
-    {
-        z-index: 1;
-        @include Flex(row, inherit);
-        padding: 30px 0px 10px 0px;
-        width: 100%;
-        &.top-logo__shadow
-        {
-            box-shadow: 5px 5px 5px lightgray;
-        }
-    }
     &__picture
     {
-        z-index: 0;
+        height: 350px;
         img
         {
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-    }
-    &__location--details
-    {
-        z-index: 0;
-        @include Flex(row, inherit);
-        position: relative;
-        width: 100%;
-        height: 60px;
-        background-color: rgba(211, 211, 211, 0.479);
-        i
-        {
-            @include Positioning($top: 18px, $right: 95px);
-            font-size: 20px;
-        }
-        h4
-        {
-            @include Positioning(absolute, 18px);
-            font-size: 20px;
-            font-weight: 500;
-        }
-    }
-    &__titles
-    {
-        background-color: whitesmoke;
-        @include Flex(column, inherit, inherit);
-        text-align: center;
-        width: 100%;
-        h1
-        {
-            width: 80%;
-            margin-top: 40px;
-        }
-        p
-        {
-            width: 95%;
-            margin: 15px 0px 40px 0px; 
-        }
-    }
-    &__button
-    {
-        padding-bottom: 60px;
-        background-color: whitesmoke;
-        &--explore
-        {
-            padding: 20px 25px;
+            height: 350px;
         }
     }
 }
@@ -132,25 +68,15 @@ a
     }
     &__processes--list
     {
-        list-style: none;
+        @include Flex(column, inherit, inherit);
         li
         {
-            padding: 25px 0px;
-            background-color: whitesmoke;
-            border-radius: 25px;
-            box-shadow: 5px 5px 10px lightgray;
-            margin-left: 10px;
-            margin-bottom: 30px;
-        }
-        a
-        {
-            display: flex;
+            width: 100%;
         }
         .fas
         {
             font-size: 20px;
             margin-top: 4px;
-            margin-left: -4px;
         }
         .fa-mobile-alt
         {
@@ -169,209 +95,126 @@ a
         {
             margin-top: 3px;
             font-size: 18px;
-            font-weight: 500;
         }
     }
     &__processes--numbers
     {
-        color: white;
         font-size: 16px;
         margin-right: 30px;
-        margin-left: -14px;
         padding: 4px 9px;
-        border-radius: 24px;
-        background-color: $primary-color;
-    }
-}
-
-.nav__hover-effect:hover
-{
-    background-color: #9256dc23;
-    .fas
-    {
-        color: $primary-color
     }
 }
 
 .restaurants
 {
-    background-color: whitesmoke;
-    width: 100%;
-    padding-bottom: 50px;
     h2
     {
         margin-left: 5%;
         padding-top: 50px;
         margin-bottom: 20px;
     }
+    &__container
+    {
+        @include Flex(column, center, center);
+        flex-wrap: none;
+    }
     &__cards
     {
+        width: 90%;
         margin: 0px 5% 20px 5%;
-        height: 250px;
-        background-color: white;
-        border-radius: 15px 15px 15px 15px;
-        box-shadow: 5px 5px 20px lightgray;
     }
     &__cards--infos
     {
-        position: relative;
         h3
         {
             margin: 12px 0px 2px 10px;
-        }
-        h4
-        {
-            margin-left: 10px;
-            font-weight: 400;
         }
         .heart-icon
         {
             @include Positioning(absolute, 10px, 25px);
             font-size: 22px;
         }
-        input
-        {
-            display: none;
-        }
-    }
-    &__cards--picture
-    {
-        position: relative;
-        width: 100%;
-        img
-        {
-            width: 100%;
-            height: 175px;
-            object-fit: cover;
-            object-position: 10% 60%;
-            border-radius: 15px 15px 0px 0px;
-        }
-        .restaurants__cards--latest
-        {
-            @include Positioning(absolute, 12px, 12px);
-            background-color: $tertiary-color;
-            color: $tertiary-color__darker;
-            padding: 6px 12px;
-            border-radius: 3px;
-            font-size: 14px;
-            font-weight: 700;
-        }
     }
 }
 
 .menu
 {
-    background-color: white;
-    width: 100%;
-    @include Positioning(relative, -60px);
-    border-radius: 40px 40px 0px 0px;
     &__restaurant
     {
         margin-left: 5%;
-        margin-bottom: 25px;
-        position: relative;
-        h1
-        {
-            padding-top: 30px;
-            font-family: Shrikhand, sans-serif;
-            font-weight: 100;
-        }
         &--like
         {
             @include Positioning(absolute, 35px, 40px);
             font-size: 26px;
         }
     }
+    &__list--container
+    {
+        @include Flex(column, center, inherit);
+        margin: 0px 5%;
+    }
     &__list
     {
-        margin: 0px 5% 40px 5%;
-        h2
-        {
-            margin-left: 8px;
-            margin-bottom: 25px;
-            font-size: 18px;
-            font-weight: 400;
-        }
-        .underline
-        {
-            padding-bottom: 4px;
-            border-bottom: 3px solid $tertiary-color;
-        }
+        margin-bottom: 30px;
+        width: 100%;
     }
     &__list--card
     {
-        position: relative;
-        min-height: 75px;
-        margin-bottom: 15px;
-        border-radius: 15px;
-        box-shadow: 5px 2px 15px lightgray;
-        .meal
-        {
-            padding-top: 6px;
-            margin-left: 10px
-        }
-        .meal-title
-        {
-            margin-right: 20%;
-            font-size: 20px;
-            padding-top: 14px;
-        }
-        .meal-info
-        {
-            padding-bottom: 10px;
-            font-weight: 400;
-        }
         .meal-price
         {
-            @include Positioning(absolute, $right: 25px, $bottom: 12px);
-        }
-    }
-    &__button
-    {
-        padding-bottom: 40px;
-        padding-top: 20px;
-        &--order
-        {
-            padding: 20px 60px;
+            @include Positioning(absolute, $right: 20px, $bottom: 12px);
         }
     }
 }
 
 .footer
 {
-    background-color: $dark-grey;
     padding-bottom: 25px;
     h2
     {
-        color: white;
-        font-family: Shrikhand, sans-serif;
         font-size: 18px;
-        font-weight: lighter;
         margin-left: 5%;
-        padding: 20px 0px;
     }
     &__list
     {
         margin-left: 5%;
-        list-style: none;
     }
-    &__list--text
+}
+
+/* ---------------- LOADER ANIMATIONS ---------------- */
+
+@keyframes fade-in
+{
+    from
     {
-        padding-bottom: 10px;
-        a
-        {
-            color: white;
-            font-size: 16px;
-        }
-        .fas
-        {
-            font-size: 12px;
-            margin-right: 10px;
-        }
-        .fa-utensils
-        {
-            font-size: 16px;
-            margin-right: 12px;
-        }
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes loading-spinner
+{
+    0%
+    { 
+        opacity: 0;
+        transform: rotate(0deg) scale(0.1);
+    }
+    20%
+    {
+        opacity: 1;
+        transform: rotate(160deg) scale(1);
+    }
+    80%
+    {
+        opacity: 1;
+        transform: rotate(440deg) scale(1);
+    }
+    100%
+    {
+        opacity: 0;
+        transform: rotate(600deg) scale(0.1);
     }
 }

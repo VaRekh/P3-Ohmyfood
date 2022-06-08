@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="../assets/css/desktop.css">
+		<link rel="stylesheet" media="screen and (max-width: 992px) and (min-width: 768px)" href="../assets/css/tablet.css" />
         <link rel="stylesheet" media="screen and (max-device-width: 767px)" href="../assets/css/phone.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -42,79 +44,107 @@
                     </label>
                 </form>
             </div>
-            <section class="menu__list">
-                <h2><span class="underline">ENTR</span>ÉES</h2>
-                <article class="menu__list--card fade-in__1">
-                    <a href="#">
-                        <h3 class="meal meal-title">Tartare de poulpe acidulé</h3>
-                        <h4 class="meal meal-info">Aux zestes d'orange</h4>
-                        <h4 class="meal-price">25€</h4>
-                    </a>
-                </article>
-                <article class="menu__list--card fade-in__2">
-                    <a href="#">
-                        <h3 class="meal meal-title">Velouté de légumes d'antan</h3>
-                        <h4 class="meal meal-info">Carotte, panais, topinambour</h4>
-                        <h4 class="meal-price">35€</h4>
-                    </a>
-                </article>
-                <article class="menu__list--card fade-in__3">
-                    <a href="#">
-                        <h3 class="meal meal-title">Soupe à l'oignon</h3>
-                        <h4 class="meal meal-info">Revisitée</h4>
-                        <h4 class="meal-price">20€</h4>
-                    </a>
-                </article>
-            </section>
-            <section class="menu__list">
-                <h2><span class="underline">PLAT</span>S</h2>
-                <article class="menu__list--card fade-in__4">
-                    <a href="#">
-                        <h3 class="meal meal-title">Coquilles Saint-Jacques</h3>
-                        <h4 class="meal meal-info">Accompagnées d'une purée de panais</h4>
-                        <h4 class="meal-price">40€</h4>
-                    </a>
-                </article>
-                <article class="menu__list--card fade-in__5">
-                    <a href="#">
-                        <h3 class="meal meal-title">Magret de canard</h3>
-                        <h4 class="meal meal-info">Et parmentier de pommes de terre</h4>
-                        <h4 class="meal-price">35€</h4>
-                    </a>
-                </article>
-                <article class="menu__list--card fade-in__6">
-                    <a href="#">
-                        <h3 class="meal meal-title">Pigeonneau d’Ille-et-Vilaine</h3>
-                        <h4 class="meal meal-info">Sur son lit de gnocchis aux légumes</h4>
-                        <h4 class="meal-price">44€</h4>
-                    </a>
-                </article>
-            </section>
-            <section class="menu__list">
-                <h2><span class="underline">DESS</span>ERTS</h2>
-                <article class="menu__list--card fade-in__7">
-                    <a href="#">
-                        <h3 class="meal meal-title">Pétales de violettes glacés</h3>
-                        <h4 class="meal meal-info">Et purée de noisettes</h4>
-                        <h4 class="meal-price">18€
-                        </h4>
-                    </a>
-                </article>
-                <article class="menu__list--card fade-in__8">
-                    <a href="#">
-                        <h3 class="meal meal-title">Fondant au chocolat</h3>
-                        <h4 class="meal meal-info">Revisité</h4>
-                        <h4 class="meal-price">22€</h4>
-                    </a>
-                </article>
-                <article class="menu__list--card fade-in__9">
-                    <a href="#">
-                        <h3 class="meal meal-title">Millefeuille croustillant</h3>
-                        <h4 class="meal meal-info">Myrtilles et pâte d’amande</h4>
-                        <h4 class="meal-price">23€</h4>
-                    </a>
-                </article>
-            </section>
+            <div class="menu__list--container">
+                <section class="menu__list">
+                    <h2><span class="underline">ENTR</span>ÉES</h2>
+                    <article class="menu__list--card fade-in__1">
+                        <div class="meal-infos-container">
+                            <h3 class="meal meal-title">Tartare de poulpe acidulé</h3>
+                            <h4 class="meal meal-info">Aux zestes d'orange</h4>
+                        </div>
+                        <div class="meal-price__container">
+                            <h4 class="meal-price">25€</h4>
+                        </div>
+                        <div class="hover-background"></div>
+                    </article>
+                    <article class="menu__list--card fade-in__2">
+                        <div class="meal-infos-container">
+                            <h3 class="meal meal-title">Velouté de légumes d'antan</h3>
+                            <h4 class="meal meal-info">Carotte, panais, topinambour</h4>
+                        </div>
+                        <div class="meal-price__container">
+                            <h4 class="meal-price">35€</h4>
+                        </div>
+                        <div class="hover-background"></div>
+                    </article>
+                    <article class="menu__list--card fade-in__3">
+                        <div class="meal-infos-container">
+                            <h3 class="meal meal-title">Soupe à l'oignon</h3>
+                            <h4 class="meal meal-info">Revisitée</h4>
+                        </div>
+                        <div class="meal-price__container">
+                            <h4 class="meal-price">20€</h4>
+                        </div>
+                        <div class="hover-background"></div>
+                    </article>
+                </section>
+                <section class="menu__list">
+                    <h2><span class="underline">PLAT</span>S</h2>
+                    <article class="menu__list--card fade-in__4">
+                        <div class="meal-infos-container">
+                            <h3 class="meal meal-title">Coquilles Saint-Jacques</h3>
+                            <h4 class="meal meal-info">Accompagnées d'une purée de panais</h4>
+                        </div>
+                        <div class="meal-price__container">
+                            <h4 class="meal-price">40€</h4>
+                        </div>
+                        <div class="hover-background"></div>
+                    </article>
+                    <article class="menu__list--card fade-in__5">
+                        <div class="meal-infos-container">
+                            <h3 class="meal meal-title">Magret de canard</h3>
+                            <h4 class="meal meal-info">Et parmentier de pommes de terre</h4>
+                        </div>
+                        <div class="meal-price__container">
+                            <h4 class="meal-price">35€</h4>
+                        </div>
+                        <div class="hover-background"></div>
+                    </article>
+                    <article class="menu__list--card fade-in__6">
+                        <div class="meal-infos-container">
+                            <h3 class="meal meal-title">Pigeonneau d’Ille-et-Vilaine</h3>
+                            <h4 class="meal meal-info">Sur son lit de gnocchis aux légumes</h4>
+                        </div>
+                        <div class="meal-price__container">
+                            <h4 class="meal-price">44€</h4>
+                        </div>
+                        <div class="hover-background"></div>
+                    </article>
+                </section>
+                <section class="menu__list">
+                    <h2><span class="underline">DESS</span>ERTS</h2>
+                    <article class="menu__list--card fade-in__7">
+                        <div class="meal-infos-container">
+                            <h3 class="meal meal-title">Pétales de violettes glacés</h3>
+                            <h4 class="meal meal-info">Et purée de noisettes</h4>
+                        </div>
+                        <div class="meal-price__container">
+                            <h4 class="meal-price">18€</h4>
+                        </div>
+                        <div class="hover-background"></div>
+                    </article>
+                    <article class="menu__list--card fade-in__8">
+                        <div class="meal-infos-container">
+                            <h3 class="meal meal-title">Fondant au chocolat</h3>
+                            <h4 class="meal meal-info">Revisité</h4>
+                        </div>
+                        <div class="meal-price__container">
+                            <h4 class="meal-price">22€</h4>
+                        </div>
+                        <div class="hover-background"></div>
+                    </article>
+                    <article class="menu__list--card fade-in__9">
+                        <div class="meal-infos-container">
+                            <h3 class="meal meal-title">Millefeuille croustillant</h3>
+                            <h4 class="meal meal-info">Myrtilles et pâte d’amande</h4>
+                        </div>
+                        <div class="meal-price__container">
+                            <h4 class="meal-price">23€</h4>
+                        </div>
+                        <div class="hover-background"></div>
+                    </article>
+                </section>
+            </div>
 
             <div class="button--container menu__button">
                 <a href="#">

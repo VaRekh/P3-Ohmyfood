@@ -1,0 +1,111 @@
+@import "libs/fonts.scss";
+@import "libs/reset.scss";
+@import "libs/mixins.scss";
+@import "libs/vars.scss";
+
+@each $font in $fonts-sizes--others
+{
+    #{nth($font, 1)}
+    {
+        font-size: nth($font, 2);
+    }
+}
+
+body
+{
+    min-width: 768px;
+    max-width: 992px;
+}
+
+.header
+{
+    &__picture
+    {
+        height: 350px;
+        img
+        {
+            height: 350px;
+        }
+    }
+}
+
+.nav
+{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 75px;
+    h2
+    {
+        margin: 30px 0px 40px 0px;
+    }
+    &__processes--list
+    {
+        @include Flex(column, inherit, inherit);
+        li
+        {
+            width: 100%;
+        }
+        .fas
+        {
+            font-size: 20px;
+            margin-top: 4px;
+        }
+        .fa-mobile-alt
+        {
+            margin-left: -2px;
+            margin-right: 40px;
+        }
+        .fa-list
+        {
+            margin-right: 36px;
+        }
+        .fa-store
+        {
+            margin-right: 34px;
+        }
+        span
+        {
+            margin-top: 3px;
+            font-size: 18px;
+        }
+    }
+    &__processes--numbers
+    {
+        font-size: 16px;
+        margin-right: 40px;
+        padding: 4px 9px;
+    }
+}
+
+.menu
+{
+    &__restaurant
+    {
+        &--like
+        {
+            @include Positioning(absolute, 35px, 40px);
+            font-size: 26px;
+        }
+    }
+    &__list--container
+    {
+        @include Flex(column, center, inherit);
+    }
+    &__list
+    {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    &__list--card
+    {
+        .meal-price
+        {
+            @include Positioning(absolute, $right: 20px, $bottom: 12px);
+        }
+    }
+}
+
+.footer
+{
+    padding-bottom: 25px;
+}

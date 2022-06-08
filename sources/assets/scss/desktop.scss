@@ -1,0 +1,518 @@
+@import "libs/fonts.scss";
+@import "libs/reset.scss";
+@import "libs/mixins.scss";
+@import "libs/vars.scss";
+
+@each $font in $fonts-sizes--desktop
+{
+    #{nth($font, 1)}
+    {
+        font-size: nth($font, 2);
+    }
+}
+
+body
+{
+    width: 100%;
+    font-family: Roboto, sans-serif;
+    position: relative;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+@include ButtonDefaultParameters;
+
+.header
+{
+    @include Flex(column, center, center);
+    position: relative;
+    &.fa-arrow-left
+    {
+        @include Positioning(absolute, 40px, $left: 35px);
+        font-size: 40px;
+    }
+    &__logo
+    {
+        z-index: 1;
+        @include Flex(row, inherit);
+        padding: 30px 0px 10px 0px;
+        width: 100%;
+        &.top-logo__shadow
+        {
+            box-shadow: 5px 5px 5px lightgray;
+        }
+    }
+    &__picture
+    {
+        z-index: 0;
+        width: 100%;
+        height: 400px;
+        img
+        {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+            object-position: 10% 60%;
+        }
+    }
+    &__location--details
+    {
+        z-index: 0;
+        @include Flex(row, inherit);
+        position: relative;
+        width: 100%;
+        height: 60px;
+        background-color: rgba(211, 211, 211, 0.479);
+        i
+        {
+            @include Positioning($top: 18px, $right: 95px);
+            font-size: 20px;
+        }
+        h4
+        {
+            @include Positioning(absolute, 18px);
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+    &__titles
+    {
+        background-color: whitesmoke;
+        @include Flex(column, inherit, inherit);
+        text-align: center;
+        width: 100%;
+        h1
+        {
+            width: 80%;
+            margin-top: 40px;
+        }
+        p
+        {
+            width: 95%;
+            margin: 15px 0px 40px 0px; 
+        }
+    }
+    &__button
+    {
+        padding-bottom: 60px;
+        background-color: whitesmoke;
+        &--explore
+        {
+            padding: 20px 25px;
+        }
+    }
+}
+
+.nav
+{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 40px;
+    h2
+    {
+        margin: 30px 0px 30px 0px;
+    }
+    &__processes--list
+    {
+        @include Flex(row, space-between, center);
+        list-style: none;
+        li
+        {
+            width: 30%;
+            padding: 25px 0px;
+            background-color: whitesmoke;
+            border-radius: 25px;
+            box-shadow: 5px 5px 10px lightgray;
+            margin-left: 10px;
+            margin-bottom: 30px;
+        }
+        a
+        {
+            display: flex;
+        }
+        .fas
+        {
+            font-size: 18px;
+            margin-top: 2px;
+            margin-left: -4px;
+        }
+        .fa-mobile-alt
+        {
+            margin-left: -2px;
+            margin-right: 25px;
+        }
+        .fa-list
+        {
+            margin-right: 21px;
+        }
+        .fa-store
+        {
+            margin-right: 19px;
+        }
+        span
+        {
+            margin-top: 2px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+    &__processes--numbers
+    {
+        color: white;
+        font-size: 14px;
+        margin-right: 25px;
+        margin-left: -14px;
+        padding: 3px 8px;
+        border-radius: 24px;
+        background-color: $primary-color;
+    }
+}
+
+.nav__hover-effect:hover
+{
+    background-color: #9256dc23;
+    .fas
+    {
+        color: $primary-color
+    }
+}
+
+.restaurants
+{
+    background-color: whitesmoke;
+    width: 100%;
+    padding-bottom: 50px;
+    h2
+    {
+        margin-left: 2%;
+        padding-top: 30px;
+        margin-bottom: 30px;
+    }
+    &__container
+    {
+        @include Flex(row, space-between, center);
+        flex-wrap: wrap;
+    }
+    &__cards
+    {
+        width: 46%;
+        margin: 0px 2% 20px 2%;
+        height: 250px;
+        background-color: white;
+        border-radius: 15px 15px 15px 15px;
+        box-shadow: 5px 5px 20px lightgray;
+    }
+    &__cards--infos
+    {
+        position: relative;
+        h3
+        {
+            margin: 12px 0px 6px 10px;
+        }
+        h4
+        {
+            margin-left: 10px;
+            font-weight: 400;
+        }
+        .heart-icon
+        {
+            @include Positioning(absolute, 8px, 25px);
+            font-size: 24px;
+        }
+        input
+        {
+            display: none;
+        }
+    }
+    &__cards--picture
+    {
+        position: relative;
+        width: 100%;
+        img
+        {
+            width: 100%;
+            height: 175px;
+            object-fit: cover;
+            object-position: 10% 60%;
+            border-radius: 15px 15px 0px 0px;
+        }
+        .restaurants__cards--latest
+        {
+            @include Positioning(absolute, 12px, 12px);
+            background-color: $tertiary-color;
+            color: $tertiary-color__darker;
+            padding: 6px 12px;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+}
+
+.input__heart
+{
+    display: none;
+    &:checked + .btn .heart-empty
+    {
+        display: none;
+    }
+    &:checked + .btn .heart-full
+    {
+        display: block;
+        animation: HeartFullAnimation 0.4s linear;
+    }
+}
+
+.heart-full
+{
+    display: none;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(175deg, $secondary-color__lighter, $primary-color__lighter);
+}
+
+.heart-empty
+{
+    animation: HeartEmptyAnimation 0.4s linear;
+}
+
+.menu
+{
+    background-color: white;
+    width: 100%;
+    @include Positioning(relative, -60px);
+    border-radius: 40px 40px 0px 0px;
+    &__restaurant
+    {
+        margin-left: 3%;
+        margin-bottom: 25px;
+        position: relative;
+        h1
+        {
+            padding-top: 30px;
+            font-family: Shrikhand, sans-serif;
+            font-weight: 100;
+        }
+        &--like
+        {
+            @include Positioning(absolute, 30px, 40px);
+            font-size: 32px;
+        }
+    }
+    &__list--container
+    {
+        @include Flex(row, space-between);
+        margin: 0px 3% 40px 3%;
+    }
+    &__list
+    {
+        width: 30%;
+        h2
+        {
+            margin-left: 8px;
+            margin-bottom: 25px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .underline
+        {
+            padding-bottom: 4px;
+            border-bottom: 3px solid $tertiary-color;
+        }
+    }
+    &__list--card
+    {
+        @include Flex(row, inherit, inherit);
+        position: relative;
+        height: 75px;
+        width: 100%;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        box-shadow: 5px 2px 15px lightgray;
+        overflow: hidden;
+        .meal-infos-container
+        {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .meal
+        {
+            padding-top: 6px;
+            margin-left: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .meal-title
+        {
+            font-size: 20px;
+            padding-top: 14px;
+        }
+        .meal-info
+        {
+            padding-bottom: 10px;
+            font-weight: 400;
+        }
+        .meal-price__container
+        {
+            width: 20%;
+            height: 100%;
+        }
+        .meal-price
+        {
+            @include Positioning(absolute, $right: 20px, $bottom: 14px);
+        }
+        &:hover > .hover-background
+        {
+            animation: MealAnimationHover 1s forwards ease-in-out;
+            width: 25%;
+        }
+        &:hover > .meal-price__container
+        {
+            animation: MealPriceAnimationHover 1s forwards ease-in-out;
+            padding-left: 100px;
+        }
+    }
+    .hover-background
+    {
+        @include Positioning(relative, $left: 150px);
+        background-color: $tertiary-color;
+        width: 0%;
+        height: inherit;
+    }
+    &__button
+    {
+        padding-bottom: 40px;
+        padding-top: 20px;
+        &--order
+        {
+            padding: 20px 60px;
+        }
+    }
+}
+
+.footer
+{
+    background-color: $dark-grey;
+    padding-bottom: 25px;
+    h2
+    {
+        color: white;
+        font-family: Shrikhand, sans-serif;
+        font-size: 22px;
+        font-weight: lighter;
+        margin-left: 3%;
+        padding: 20px 0px;
+    }
+    &__list
+    {
+        margin-left: 3%;
+        list-style: none;
+    }
+    &__list--text
+    {
+        padding-bottom: 10px;
+        a
+        {
+            color: white;
+            font-size: 16px;
+        }
+        .fas
+        {
+            font-size: 12px;
+            margin-right: 10px;
+        }
+        .fa-utensils
+        {
+            font-size: 16px;
+            margin-right: 12px;
+        }
+    }
+}
+
+/* -------------------------------- HEART ANIMATIONS -------------------------------- */
+
+@keyframes HeartFullAnimation
+{
+    0%
+    {
+        transform: scale(0);
+        color: white;
+    }
+    100%
+    {
+        transform: scale(1);
+        color: transparent;
+    }
+}
+
+@keyframes HeartEmptyAnimation
+{
+    0%
+    {
+        transform: scale(0);
+        color: transparent;
+    }
+    100%
+    {
+        transform: scale(1);
+        color: black;
+    }
+}
+
+/* -------------------------------- MEAL ANIMATIONS -------------------------------- */
+
+@for $i from 1 through 10
+{
+    .fade-in__#{$i}
+    {
+        animation: slide-up 1s backwards linear $i * 0.15s;
+    }
+}
+
+@keyframes slide-up
+{
+    0%
+    {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    50%
+    {
+        transform: translateY(10px);
+    }
+    75%
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes MealAnimationHover
+{
+    from
+    {
+        transform: translateX(0);
+    }
+    to
+    {
+        transform: translateX(-150px);
+    }
+}
+@keyframes MealPriceAnimationHover
+{
+    from
+    {
+        transform: translateX(0);
+    }
+    to
+    {
+        transform: translateX(-75px);
+    }
+}

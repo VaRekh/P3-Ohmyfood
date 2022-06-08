@@ -3,6 +3,8 @@
    <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <link rel="stylesheet" href="../assets/css/desktop.css">
+		<link rel="stylesheet" media="screen and (max-width: 992px) and (min-width: 768px)" href="../assets/css/tablet.css" />
       <link rel="stylesheet" media="screen and (max-device-width: 767px)" href="../assets/css/phone.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,7 +21,7 @@
                      srcset="../assets/images/logo/ohmyfood.png">
                <source media="(max-device-width: 767px)"
                      srcset="../assets/images/logo/ohmyfood@2x.svg">
-               <img src="images/logo/ohmyfood.png" alt="Logo de Ohmyfood">
+               <img src="../assets/images/logo/ohmyfood.png" alt="Logo de Ohmyfood">
             </picture>
          </a>
          <div class="header__location--details">
@@ -49,96 +51,98 @@
 
          <section class="restaurants">
             <h2>Restaurants</h2>
-            <article class="restaurants__cards">
-               <a href="menu_palette-du-gout.html">
-                  <div class="restaurants__cards--picture">
-                     <img src="../assets/images/restaurants/palette-du-gout.jpg" alt="Photo du restaurant La palette du goût">
-                     <div class="restaurants__cards--latest">Nouveau</div>
-                  </div>
-                  <div class="restaurants__cards--infos">
-                     <h3>La palette du goût</h3>
-                     <h4>Ménilmontant</h4>
-                     <form class="restaurant__cards--like" methode="post" action ="#">
-                         <input class="input__heart" id="input__liked--palette" type="checkbox">
-                         <label class="btn" for="input__liked--palette">
-                             <div class="heart-icon heart-empty">
-                                 <i class="fa-regular fa-heart"></i>
-                             </div>
-                             <div class="heart-icon heart-full">
-                                 <i class="fas fa-heart"></i>
-                             </div>
-                         </label>
-                     </form>
-                  </div>
-               </a>
-            </article>
-            <article class="restaurants__cards">
-               <a href="menu_la-note-enchantee.html">
-                  <div class="restaurants__cards--picture">
-                     <img src="../assets/images/restaurants/note-enchantee.jpg" alt="Photo du restaurant La note enchantée">
-                     <div class="restaurants__cards--latest">Nouveau</div>
-                  </div>
-                  <div class="restaurants__cards--infos">
-                     <h3>La note enchantée</h3>
-                     <h4>Charonne</h4>
-                     <form class="restaurant__cards--like" methode="post" action ="#">
-                         <input class="input__heart" id="input__liked--note" type="checkbox">
-                         <label class="btn" for="input__liked--note">
-                             <div class="heart-icon heart-empty">
-                                 <i class="fa-regular fa-heart"></i>
-                             </div>
-                             <div class="heart-icon heart-full">
-                                 <i class="fas fa-heart"></i>
-                             </div>
-                         </label>
-                     </form>
-                  </div>
-               </a>
-            </article>
-            <article class="restaurants__cards">
-               <a href="menu_a-la-francaise.html">
-                  <div class="restaurants__cards--picture">
-                     <img src="../assets/images/restaurants/a-la-francaise.jpg" alt="Photo du restaurant À la française">
-                  </div>
-                  <div class="restaurants__cards--infos">
-                     <h3>À la française</h3>
-                     <h4>Cité Rouge</h4>
-                     <form class="restaurant__cards--like" methode="post" action ="#">
-                         <input class="input__heart" id="input__liked--francaise" type="checkbox">
-                         <label class="btn" for="input__liked--francaise">
-                             <div class="heart-icon heart-empty">
-                                 <i class="fa-regular fa-heart"></i>
-                             </div>
-                             <div class="heart-icon heart-full">
-                                 <i class="fas fa-heart"></i>
-                             </div>
-                         </label>
-                     </form>
-                  </div>
-               </a>
-            </article>
-            <article class="restaurants__cards">
-               <a href="menu_le-delice-des-sens.html">
-                  <div class="restaurants__cards--picture">
-                     <img src="../assets/images/restaurants/delice-des-sens.jpg" alt="Photo du restaurant Le délice des sens">
-                  </div>
-                  <div class="restaurants__cards--infos">
-                     <h3>Le délice des sens</h3>
-                     <h4>Folie-Méricourt</h4>
-                     <form class="restaurant__cards--like" methode="post" action ="#">
-                         <input class="input__heart" id="input__liked--delice" type="checkbox">
-                         <label class="btn" for="input__liked--delice">
-                             <div class="heart-icon heart-empty">
-                                 <i class="fa-regular fa-heart"></i>
-                             </div>
-                             <div class="heart-icon heart-full">
-                                 <i class="fas fa-heart"></i>
-                             </div>
-                         </label>
-                     </form>
-                  </div>
-               </a>
-            </article>
+            <div class="restaurants__container">
+               <article class="restaurants__cards">
+                  <a href="menu_palette-du-gout.html">
+                     <div class="restaurants__cards--picture">
+                        <img src="../assets/images/restaurants/palette-du-gout.jpg" alt="Photo du restaurant La palette du goût">
+                        <div class="restaurants__cards--latest">Nouveau</div>
+                     </div>
+                     <div class="restaurants__cards--infos">
+                        <h3>La palette du goût</h3>
+                        <h4>Ménilmontant</h4>
+                        <form class="restaurant__cards--like" methode="post" action ="#">
+                           <input class="input__heart" id="input__liked--palette" type="checkbox">
+                           <label class="btn" for="input__liked--palette">
+                              <div class="heart-icon heart-empty">
+                                    <i class="fa-regular fa-heart"></i>
+                              </div>
+                              <div class="heart-icon heart-full">
+                                    <i class="fas fa-heart"></i>
+                              </div>
+                           </label>
+                        </form>
+                     </div>
+                  </a>
+               </article>
+               <article class="restaurants__cards">
+                  <a href="menu_la-note-enchantee.html">
+                     <div class="restaurants__cards--picture">
+                        <img src="../assets/images/restaurants/note-enchantee.jpg" alt="Photo du restaurant La note enchantée">
+                        <div class="restaurants__cards--latest">Nouveau</div>
+                     </div>
+                     <div class="restaurants__cards--infos">
+                        <h3>La note enchantée</h3>
+                        <h4>Charonne</h4>
+                        <form class="restaurant__cards--like" methode="post" action ="#">
+                           <input class="input__heart" id="input__liked--note" type="checkbox">
+                           <label class="btn" for="input__liked--note">
+                              <div class="heart-icon heart-empty">
+                                    <i class="fa-regular fa-heart"></i>
+                              </div>
+                              <div class="heart-icon heart-full">
+                                    <i class="fas fa-heart"></i>
+                              </div>
+                           </label>
+                        </form>
+                     </div>
+                  </a>
+               </article>
+               <article class="restaurants__cards">
+                  <a href="menu_a-la-francaise.html">
+                     <div class="restaurants__cards--picture">
+                        <img src="../assets/images/restaurants/a-la-francaise.jpg" alt="Photo du restaurant À la française">
+                     </div>
+                     <div class="restaurants__cards--infos">
+                        <h3>À la française</h3>
+                        <h4>Cité Rouge</h4>
+                        <form class="restaurant__cards--like" methode="post" action ="#">
+                           <input class="input__heart" id="input__liked--francaise" type="checkbox">
+                           <label class="btn" for="input__liked--francaise">
+                              <div class="heart-icon heart-empty">
+                                    <i class="fa-regular fa-heart"></i>
+                              </div>
+                              <div class="heart-icon heart-full">
+                                    <i class="fas fa-heart"></i>
+                              </div>
+                           </label>
+                        </form>
+                     </div>
+                  </a>
+               </article>
+               <article class="restaurants__cards">
+                  <a href="menu_le-delice-des-sens.html">
+                     <div class="restaurants__cards--picture">
+                        <img src="../assets/images/restaurants/delice-des-sens.jpg" alt="Photo du restaurant Le délice des sens">
+                     </div>
+                     <div class="restaurants__cards--infos">
+                        <h3>Le délice des sens</h3>
+                        <h4>Folie-Méricourt</h4>
+                        <form class="restaurant__cards--like" methode="post" action ="#">
+                           <input class="input__heart" id="input__liked--delice" type="checkbox">
+                           <label class="btn" for="input__liked--delice">
+                              <div class="heart-icon heart-empty">
+                                    <i class="fa-regular fa-heart"></i>
+                              </div>
+                              <div class="heart-icon heart-full">
+                                    <i class="fas fa-heart"></i>
+                              </div>
+                           </label>
+                        </form>
+                     </div>
+                  </a>
+               </article>
+            </div>
          </section>
       </main>
 
