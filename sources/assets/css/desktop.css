@@ -534,9 +534,9 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: inherit;
-      -ms-flex-pack: inherit;
-          justify-content: inherit;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: inherit;
       -ms-flex-align: inherit;
           align-items: inherit;
@@ -550,7 +550,7 @@ a {
   overflow: hidden;
 }
 
-.menu__list--card .meal-infos-container {
+.menu__list--card .meal-infos__container {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
@@ -577,6 +577,7 @@ a {
 .menu__list--card .meal-price__container {
   width: 20%;
   height: 100%;
+  padding-left: 20px;
 }
 
 .menu__list--card .meal-price {
@@ -588,26 +589,49 @@ a {
 }
 
 .menu__list--card:hover > .hover-background {
-  -webkit-animation: MealAnimationHover 1s forwards ease-in-out;
-          animation: MealAnimationHover 1s forwards ease-in-out;
-  width: 25%;
+  -webkit-animation: MealAnimationHover 0.5s forwards ease-in-out;
+          animation: MealAnimationHover 0.5s forwards ease-in-out;
+}
+
+.menu__list--card:hover > .hover-background > i {
+  -webkit-animation: MealIconAnimationHover 0.5s backwards ease-in-out 0.2s;
+          animation: MealIconAnimationHover 0.5s backwards ease-in-out 0.2s;
 }
 
 .menu__list--card:hover > .meal-price__container {
-  -webkit-animation: MealPriceAnimationHover 1s forwards ease-in-out;
-          animation: MealPriceAnimationHover 1s forwards ease-in-out;
+  -webkit-animation: MealPriceAnimationHover 0.4s forwards ease-in-out 0.1s;
+          animation: MealPriceAnimationHover 0.4s forwards ease-in-out 0.1s;
   padding-left: 100px;
 }
 
 .menu .hover-background {
-  position: relative;
+  position: absolute;
   top: auto;
-  right: auto;
+  right: -100px;
   bottom: auto;
-  left: 150px;
+  left: auto;
   background-color: #99E2D0;
-  width: 0%;
+  width: 80px;
   height: inherit;
+}
+
+.menu .hover-background i {
+  color: white;
+  font-size: 30px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .menu__button {
@@ -796,45 +820,67 @@ a {
 
 @-webkit-keyframes MealAnimationHover {
   from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
   to {
-    -webkit-transform: translateX(-150px);
-            transform: translateX(-150px);
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
   }
 }
 
 @keyframes MealAnimationHover {
   from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
   to {
-    -webkit-transform: translateX(-150px);
-            transform: translateX(-150px);
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+}
+
+@-webkit-keyframes MealIconAnimationHover {
+  from {
+    -webkit-transform: rotate(-270deg);
+            transform: rotate(-270deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes MealIconAnimationHover {
+  from {
+    -webkit-transform: rotate(-270deg);
+            transform: rotate(-270deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 
 @-webkit-keyframes MealPriceAnimationHover {
   from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
   to {
-    -webkit-transform: translateX(-75px);
-            transform: translateX(-75px);
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
   }
 }
 
 @keyframes MealPriceAnimationHover {
   from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
   to {
-    -webkit-transform: translateX(-75px);
-            transform: translateX(-75px);
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
   }
 }
 /*# sourceMappingURL=desktop.css.map */

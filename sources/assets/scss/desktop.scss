@@ -327,7 +327,7 @@ a
     }
     &__list--card
     {
-        @include Flex(row, inherit, inherit);
+        @include Flex(row, space-between, inherit);
         position: relative;
         height: 75px;
         width: 100%;
@@ -335,7 +335,7 @@ a
         border-radius: 15px;
         box-shadow: 5px 2px 15px lightgray;
         overflow: hidden;
-        .meal-infos-container
+        .meal-infos__container
         {
             width: 100%;
             overflow: hidden;
@@ -363,6 +363,7 @@ a
         {
             width: 20%;
             height: 100%;
+            padding-left: 20px;
         }
         .meal-price
         {
@@ -370,21 +371,31 @@ a
         }
         &:hover > .hover-background
         {
-            animation: MealAnimationHover 1s forwards ease-in-out;
-            width: 25%;
+            animation: MealAnimationHover 0.5s forwards ease-in-out;
+        }
+        &:hover > .hover-background > i
+        {
+            animation: MealIconAnimationHover 0.5s backwards ease-in-out 0.2s;
         }
         &:hover > .meal-price__container
         {
-            animation: MealPriceAnimationHover 1s forwards ease-in-out;
+            animation: MealPriceAnimationHover 0.4s forwards ease-in-out 0.1s;
             padding-left: 100px;
         }
     }
     .hover-background
     {
-        @include Positioning(relative, $left: 150px);
+        @include Positioning(absolute, $right: -100px);
         background-color: $tertiary-color;
-        width: 0%;
+        width: 80px;
         height: inherit;
+        i
+        {
+            color: white;
+            font-size: 30px;
+            height: 100%;
+            @include Flex(row, center, center);
+        }
     }
     &__button
     {
@@ -498,21 +509,34 @@ a
 {
     from
     {
-        transform: translateX(0);
+        transform: translateX(0px);
     }
     to
     {
-        transform: translateX(-150px);
+        transform: translateX(-100px);
     }
 }
+
+@keyframes MealIconAnimationHover
+{
+    from
+    {
+        transform: rotate(-270deg);
+    }
+    to
+    {
+        transform: rotate(0deg);
+    }
+}
+
 @keyframes MealPriceAnimationHover
 {
     from
     {
-        transform: translateX(0);
+        transform: translateX(0px);
     }
     to
     {
-        transform: translateX(-75px);
+        transform: translateX(-80px);
     }
 }

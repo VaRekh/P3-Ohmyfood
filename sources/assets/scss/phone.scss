@@ -4,12 +4,24 @@
 @import "libs/vars.scss";
 
 $between-tablet-phone-resolution: "screen (min-width: 425px) and (max-width: 767px)";
+$low-phone-resolution: "screen and (max-width: 390px)";
 
 @each $font in $fonts-sizes--others
 {
     #{nth($font, 1)}
     {
         font-size: nth($font, 2);
+    }
+}
+
+@media screen and (max-width: 390px)
+{
+    @each $font in $fonts-sizes--very-low
+    {
+        #{nth($font, 1)}
+        {
+            font-size: nth($font, 2);
+        }
     }
 }
 
