@@ -128,7 +128,7 @@ body
     &__container
     {
         @include Flex(column, center, center);
-        flex-wrap: none;
+        flex-wrap: nowrap;
     }
     &__cards
     {
